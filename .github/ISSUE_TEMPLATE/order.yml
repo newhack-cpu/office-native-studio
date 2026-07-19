@@ -1,0 +1,67 @@
+name: 提交 Office 文档需求
+description: 只提交非敏感信息；确认范围后再付款。
+title: "[需求] "
+labels: ["order-intake"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请勿在公开 Issue 上传源文件、付款截图、手机号、邮箱、身份证号、账户数据或客户名单。
+        此表仅用于确认服务类型、页数、交期和验收标准。收到明确订单号与报价前请勿付款。
+  - type: dropdown
+    id: service
+    attributes:
+      label: 服务类型
+      options:
+        - 1页PPT急救试改（¥19.9）
+        - PPT美化/重建
+        - 图片或PDF转可编辑PPT
+        - Excel仪表板/表格修复
+        - Word专业排版
+    validations:
+      required: true
+  - type: input
+    id: volume
+    attributes:
+      label: 页数或数据量
+      description: 例如“PPT 8页”“Word 20页、3个表格”“Excel 约3000行”。
+      placeholder: 请填写大致工作量
+    validations:
+      required: true
+  - type: input
+    id: deadline
+    attributes:
+      label: 最晚交付时间
+      placeholder: 例如 2026-07-21 18:00（北京时间）
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 目标与验收标准
+      description: 描述受众、用途、需要保留的元素，以及怎样算完成。不要粘贴保密正文。
+      placeholder: 例如“统一为蓝灰商务风；图表保持可编辑；交付PPTX和PDF”。
+    validations:
+      required: true
+  - type: dropdown
+    id: source
+    attributes:
+      label: 源文件情况
+      options:
+        - 已准备，可在确认后私密传输
+        - 只有PDF或图片
+        - 只有文字和数据
+        - 尚未整理完整
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: 确认事项
+      options:
+        - label: 我不会在公开 Issue 上传源文件或个人/客户敏感信息。
+          required: true
+        - label: 我会先等待订单号、明确报价和交期，再决定是否付款。
+          required: true
+        - label: 我拥有所提供文字、图片、字体和数据的必要使用权。
+          required: true
