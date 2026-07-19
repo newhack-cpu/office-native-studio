@@ -79,6 +79,7 @@ h1, h2, h3 { line-height: 1.18; margin-top: 0; color: var(--navy); }
 .link-row a { font-weight: 800; }
 
 .order-grid { display: grid; grid-template-columns: 1.25fr .75fr; gap: 68px; align-items: start; }
+.order-grid .button.secondary { color: var(--navy); border-color: var(--line); background: var(--pale); }
 .steps { list-style: none; padding: 0; margin: 34px 0; counter-reset: item; }
 .steps li { display: grid; grid-template-columns: 58px 1fr; gap: 16px; padding: 18px 0; border-top: 1px solid var(--line); }
 .steps li > span { color: var(--blue); font-weight: 900; letter-spacing: .08em; }
